@@ -21,6 +21,18 @@ Query Chinese official holidays, weekends, shift-workdays (调休/补班), and s
 
 ## 🚀 Installation
 
+### ⚡ One-Click Install for OpenClaw
+
+Copy and paste this prompt directly into OpenClaw:
+
+```
+Install the china-holiday skill for me. The SKILL.md is at:
+https://raw.githubusercontent.com/DecemJiang/china-holiday/main/china-holiday/SKILL.md
+
+Save it to ~/.openclaw/skills/china-holiday/SKILL.md
+and restart the gateway.
+```
+
 ### OpenClaw (Recommended)
 
 ```bash

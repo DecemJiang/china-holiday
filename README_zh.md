@@ -23,6 +23,15 @@
 
 ## 📦 安装方式
 
+### ⚡ OpenClaw 一键安装（复制这段话发给 AI 就行）
+
+```
+帮我安装 china-holiday 技能，SKILL.md 在这里：
+https://raw.githubusercontent.com/DecemJiang/china-holiday/main/china-holiday/SKILL.md
+
+保存到 ~/.openclaw/skills/china-holiday/SKILL.md，然后重启网关。
+```
+
 ### OpenClaw（推荐方式）
 
 ```bash
