@@ -29,7 +29,7 @@ npx clawhub install china-holiday-decem
 
 # Option 2: Copy SKILL.md to your skills directory
 mkdir -p ~/.openclaw/skills/china-holiday
-cp SKILL.md ~/.openclaw/skills/china-holiday/
+cp china-holiday/SKILL.md ~/.openclaw/skills/china-holiday/
 
 # Restart gateway
 openclaw gateway restart
@@ -40,19 +40,19 @@ openclaw gateway restart
 ```bash
 # Clone the repo
 git clone https://github.com/DecemJiang/china-holiday.git
-cd china-holiday
+cd china-holiday/china-holiday
 
 # Run directly — no pip, no dependencies
-python3 scripts/china_holiday.py info 2026-10-01
-python3 scripts/china_holiday.py next
-python3 scripts/china_holday.py year 2026
+python3 china-holiday/scripts/china_holiday.py info 2026-10-01
+python3 china-holiday/scripts/china_holiday.py next
+python3 china-holiday/scripts/china_holiday.py year 2026
 ```
 
 ### Claude Code / Codex
 
 ```bash
 # Download the script
-curl -fsSL https://raw.githubusercontent.com/DecemJiang/china-holiday/main/scripts/china_holiday.py \
+curl -fsSL https://raw.githubusercontent.com/DecemJiang/china-holiday/main/china-holiday/scripts/china_holiday.py \
   -o /tmp/china_holiday.py
 
 # Use it in your agent
@@ -64,7 +64,7 @@ python3 /tmp/china_holiday.py info 2026-10-01
 ```python
 import subprocess
 result = subprocess.run(
-    ["python3", "china-holiday/scripts/china_holiday.py", "next"],
+    ["python3", "china-holiday/china-holiday/scripts/china_holiday.py", "next"],
     capture_output=True, text=True
 )
 print(result.stdout)
@@ -73,7 +73,7 @@ print(result.stdout)
 ## 📖 Usage
 
 ```bash
-python3 scripts/china_holiday.py <command> [args]
+python3 china-holiday/scripts/china_holiday.py <command> [args]
 ```
 
 | Command | Description | Example |
@@ -90,7 +90,7 @@ python3 scripts/china_holiday.py <command> [args]
 ### Output Example
 
 ```bash
-$ python3 scripts/china_holiday.py info 2026-10-01
+$ python3 china-holiday/scripts/china_holiday.py info 2026-10-01
 
 📅 2026年10月1日
    【类型】节日 · 国庆节 · 周四
@@ -98,7 +98,7 @@ $ python3 scripts/china_holiday.py info 2026-10-01
 ```
 
 ```bash
-$ python3 scripts/china_holiday.py next 2026-04-01
+$ python3 china-holiday/scripts/china_holiday.py next 2026-04-01
 
 🔍 从 2026年4月1日 起:
 
@@ -109,7 +109,7 @@ $ python3 scripts/china_holiday.py next 2026-04-01
 ```
 
 ```bash
-$ python3 scripts/china_holiday.py tts
+$ python3 china-holiday/scripts/china_holiday.py tts
 
 🔊 播报内容:
 还有5天就是清明节了，别着急。
@@ -149,16 +149,18 @@ Holiday data powered by **[timor.tech](https://timor.tech)** — a free, non-com
 ## 📁 Project Structure
 
 ```
-china-holiday/
+china-holiday/               # Repository root
 ├── SKILL.md                  # OpenClaw skill definition
 ├── README.md                 # English documentation
 ├── README_zh.md              # 中文自述文件
 ├── VERSION                  # Current version
 ├── CHANGELOG.md             # 版本历史
 ├── LICENSE                  # MIT License
-├── .gitignore
-└── scripts/
-    └── china_holiday.py     # Main script (stdlib only)
+└── china-holiday/           # Skill package
+    ├── SKILL.md
+    ├── .gitignore
+    └── scripts/
+        └── china_holiday.py  # Main script (stdlib only)
 ```
 
 ## License
